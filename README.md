@@ -12,9 +12,9 @@ The objective of this task was to understand how password-protected PDF files ca
 
 - Understand how password-protected PDF files are handled.
 - Extract a crackable password hash from a PDF.
-- Use **John the Ripper** to perform a dictionary-based password recovery.
-- Use the NetworkWalks Hash Calculator to generate PDF hashes.
-- Use the NetworkWalks Password Cracker to recover passwords.
+- Use **John the Ripper (JTR)** to perform dictionary-based password recovery.
+- Use the **NetworkWalks Hash Calculator** to generate PDF hashes.
+- Use the **NetworkWalks Password Cracker** to recover passwords.
 - Verify the recovered passwords by opening the protected PDF files.
 
 ---
@@ -72,6 +72,14 @@ john --show --format=PDF pdf_hash.txt
 
 The recovered password was then used to open the protected PDF successfully.
 
+### 📸 Evidence
+
+![PDF 1 Hash Extraction](01_JTR_PDF1_Hash_Extraction.png)
+
+![PDF 1 Password Cracked](02_JTR_PDF1_Password_Cracked.png)
+
+![PDF 1 Unlocked](04_JTR_PDF1_Unlocked.png)
+
 ---
 
 # 🔹 Task 2 – NetworkWalks Hash Calculator
@@ -85,9 +93,9 @@ For the second PDF, the **NetworkWalks Hash Calculator** was used.
 3. Generated the PDF password hash.
 4. Recorded the generated hash for the next step.
 
-📸 Evidence:
+### 📸 Evidence
 
-`05_PDF2_Hash_Calculator.png`
+![PDF 2 Hash Calculator](05_PDF2_Hash_Calculator.png)
 
 ---
 
@@ -103,10 +111,11 @@ The generated PDF hash was entered into the **NetworkWalks Password Cracker**.
 4. Successfully obtained the PDF password.
 5. Used the recovered password to open the protected PDF.
 
-📸 Evidence:
+### 📸 Evidence
 
-- `06_PDF2_Password_Cracked.png`
-- `07_PDF2_Unlocked.png`
+![PDF 2 Password Cracked](06_PDF2_Password_Cracked.png)
+
+![PDF 2 Unlocked](07_PDF2_Unlocked.png)
 
 ---
 
@@ -123,29 +132,13 @@ The same workflow was performed on the third password-protected PDF.
 5. Obtained the password.
 6. Used the password to successfully open the PDF.
 
-📸 Evidence:
+### 📸 Evidence
 
-- `08_PDF3_Hash_Calculator.png`
-- `09_PDF3_Password_Cracked.png`
-- `10_PDF3_Unlocked.png`
+![PDF 3 Hash Calculator](08_PDF3_Hash_Calculator.png)
 
----
+![PDF 3 Password Cracked](09_PDF3_Password_Cracked.png)
 
-# 📂 Evidence
-
-The screenshots included in this repository document the complete workflow:
-
-| File | Description |
-|---|---|
-| `01_JTR_PDF1_Hash_Extraction.png` | PDF hash extracted using `pdf2john` |
-| `02_JTR_PDF1_Password_Cracked.png` | JTR successfully recovered the password |
-| `04_JTR_PDF1_Unlocked.png` | Protected PDF opened using the recovered password |
-| `05_PDF2_Hash_Calculator.png` | Hash generated using NetworkWalks Hash Calculator |
-| `06_PDF2_Password_Cracked.png` | Password recovered using NetworkWalks Password Cracker |
-| `07_PDF2_Unlocked.png` | Second PDF successfully opened |
-| `08_PDF3_Hash_Calculator.png` | Hash generated for the third PDF |
-| `09_PDF3_Password_Cracked.png` | Password recovered for the third PDF |
-| `10_PDF3_Unlocked.png` | Third PDF successfully opened |
+![PDF 3 Unlocked](10_PDF3_Unlocked.png)
 
 ---
 
@@ -159,7 +152,7 @@ Through this lab, I learned:
 - How to save command output into a file using `>`.
 - How to verify a recovered password using JTR's `--show` option.
 - How hash extraction and password recovery can also be performed using web-based lab tools.
-- The importance of verifying a recovered password by successfully opening the protected file.
+- The importance of verifying a recovered password by successfully opening the protected PDF files.
 
 ---
 
